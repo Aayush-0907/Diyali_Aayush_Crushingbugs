@@ -41,10 +41,15 @@ let theButtons = document.querySelectorAll('#buttonHolder img'),
 
     function handleDrop(e) {
         console.log('dropped')
-        e.preventDefault();
-        //bug fix #1: should do here, its fairly short
+        e.preventDefault(); // bug fix #1: Prevent Multiple Pieces in One Drop Zone
+        
+         if (this.children.length === 0) { // check wether the drop zone is empty 
+            this.appendChild(draggedPiece); // if it is empty then put the dragged piece to the drop zone
+         } else {
+             console.log('This drop zone already contains a piece'); // if it is not empty then show this message
+         }
 
-        this.appendChild(draggedPiece);
+        
     }
 
     theButtons.forEach(button => button.addEventListener('click', changeBGImage));
