@@ -1,3 +1,15 @@
+// plan on how i will solve this problem
+//bug fix #1: Prevent Multiple Pieces in One Drop Zone
+// something like by using loop if else maybe.
+// - Tweak the `handleDrop` function to check if the drop zone already contains a piece.
+// - If it does, prevent the new puzzle piece from being dropped. 
+
+//bug fix #2: Reset the puzzle to original place after Changing the Background Image.
+// create a function which will reset the puzzle to its original place after changing the background image.
+// call this function inside changeBGImage to reset the puzzle to its original place after changing the background image.
+
+
+
 let theButtons = document.querySelectorAll('#buttonHolder img'),
     puzzleBoard = document.querySelector('.puzzle-board'),
     puzzlePieces = document.querySelectorAll('.puzzle-pieces img'),
@@ -7,6 +19,7 @@ let theButtons = document.querySelectorAll('#buttonHolder img'),
 
     function changeBGImage() {
         puzzleBoard.style.backgroundImage = `url(images/backGround${this.id}.jpg)`;
+        
         //bug fix #2: should do here, fairly short
     }
 
